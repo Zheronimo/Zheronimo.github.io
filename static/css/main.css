@@ -1156,10 +1156,7 @@ button {
 .down-arrow {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: calc(50% - 13px);
   cursor: none;
   -webkit-animation: arrowDown 2s ease infinite;
           animation: arrowDown 2s ease infinite; }
