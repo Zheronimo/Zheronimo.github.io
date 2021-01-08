@@ -1,10 +1,15 @@
 $(document).ready(function(){
+	svg4everybody({});
 
 	// ==============================
 	// Check scrollbar width
 	// ==============================
-	var getScrollbarWidth = function (){
-		var style = {"max-height":"100px", "overflow":"scroll", "position":"absolute"},
+	let getScrollbarWidth = function (){
+		let style = {
+			"max-height":"100px", 
+			"overflow":"scroll", 
+			"position":"absolute"
+		},
 			wrapper = $("<div id='scroll_bar_check_A'></div>").css(style),
 			inner = $("<div id='scroll_bar_check_B'></div>"),
 			stretcher = $("<img src='/static/img/force-scroll.png'/>"),
@@ -28,6 +33,8 @@ $(document).ready(function(){
 	window.hm.mobileSize = 480 - window.hm.scrollBarWidth;
 	window.hm.tabletSize = 768 - window.hm.scrollBarWidth;
 	window.hm.resizeLimit = 2000 - window.hm.scrollBarWidth;
+
+	let scrollWidth = window.innerWidth - document.body.offsetWidth +'px';
 
 
 	$(".welcome__btn").on("click",function(event){
@@ -311,9 +318,13 @@ $(document).ready(function(){
 	function emailTest(input) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 	}
+
+	
 	// Функция вызова popup
 	function popupOpen(popup){
 		popup.classList.add('open');
+		document.body.style.overflow = 'hidden';
+		document.body.style.paddingRight = scrollWidth; // добавляем ширину скрола, чтобы небыло прижка сайта
 	}
 	
 	let popupBtn = document.querySelectorAll('.popup__btn');
@@ -321,27 +332,11 @@ $(document).ready(function(){
 	popupBtn.forEach(function(item){
 		item.addEventListener('click', function(){
 			this.closest(".popup").classList.remove("open");
+			document.body.style.overflow = 'auto';
+			document.body.style.paddingRight = 0; // убираем ширину скрола, чтобы небыло прижка сайта
 			form.reset();
 		});
 	});
-
-
-	// $(".feedback-form").submit(function(){
-	// 	let th = $(this);
-	// 	$.ajax({
-	// 		type: "POST",
-	// 		url: "mail.php",
-	// 		data: th.serialize()
-	// 	}).done(function(){
-	// 		alert("Thank you!");
-	// 		setTimeout(function(){
-	// 			// Done function
-	// 			th.trigger("reset");
-	// 		}, 1000);
-	// 	});
-	// 	return false;
-	// });
-
 });
 
 /* Инициализируем карту */
