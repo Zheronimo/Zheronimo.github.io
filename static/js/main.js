@@ -52,6 +52,30 @@ $(document).ready(function(){
 	/*Вызываем preloader */
 	preloader.init();
 
+	/* Табы */
+
+	const tabs = document.querySelector('.tabs');
+	const tabsNav = document.querySelectorAll('.tabs__nav');
+	const tabsContent = document.querySelectorAll('.tabs__content');
+	if (tabs) {
+		tabs.addEventListener('click', (e) => {
+			if (e.target.classList.contains('tabs__nav')) {
+				const tabsPath =e.target.dataset.tabsPath;
+				tabsHendler(tabsPath);
+			}
+		});
+	}
+	const tabsHendler = (path) => {
+		tabsNav.forEach(item => {
+			item.classList.remove('tabs__nav--active');
+		});
+		document.querySelector(`[data-tabs-path=${path}]`).classList.add('tabs__nav--active');
+
+		tabsContent.forEach(item => {
+			item.classList.remove('tabs__content--active');
+		});
+		document.querySelector(`[data-tabs-target=${path}]`).classList.add('tabs__content--active');
+	} 
 
 	/* Parallax */
 	var section = $(".hero");

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="shortcut icon" href="static/img/fav_forest.png" type="image/png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="static/css/main.css"/>
+    <title>Админка
+    </title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="section preloader">
+        <div class="preloader__percents">0%</div>
+        <svg class="icon icon-forest preloader__icon">
+          <use xlink:href="static/img/svg/symbol/sprite.svg#forest"></use>
+        </svg>
+      </section>
+      <header class="admin__header">
+        <h1 class="admin__title">Панель администрирования</h1><a class="admin__link" href="index.html">Вернуться на сайт</a>
+      </header>
+      <main class="admin__content"> 
+        <div class="admin__tabs tabs">
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <button class="tabs__nav tabs__nav--active" data-tabs-path="about">Обо мне</button>
+            </li>
+            <li class="tabs__item">
+              <button class="tabs__nav" data-tabs-path="blog">Блог</button>
+            </li>
+            <li class="tabs__item">
+              <button class="tabs__nav" data-tabs-path="work">Мои работы</button>
+            </li>
+          </ul>
+          <div class="tabs__content tabs__content--active" data-tabs-target="about">
+            <h2 class="tabs__title">Страница «Обо мне»</h2>
+            <div class="tabs__skills">
+              <div class="tabs-skill">
+                <h3 class="tabs-skill__title">Frontend</h3>
+                <ul class="tabs-skill__list">
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">HTML</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="75"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">CSS</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="75"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">JavaScript
+&amp;jQuery</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="65"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">React</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="25"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="tabs-skill">
+                <h3 class="tabs-skill__title">Backend</h3>
+                <ul class="tabs-skill__list">
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">PHP</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="35"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">mySQL</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="35"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">Wordpress</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="40"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">October CMS</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="25"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="tabs-skill">
+                <h3 class="tabs-skill__title">WorkFlow</h3>
+                <ul class="tabs-skill__list">
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">Git</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="50"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">Gulp</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="50"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                  <li class="tabs-skill__item"><span class="tabs-skill__name">WebPack</span>
+                    <label>
+                      <input class="tabs-skill__value" type="number" step="1" min="0" max="100" value="50"/><span class="tabs-skill__percent">%</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn tabs__btn">Сохранить</button>
+          </div>
+          <div class="tabs__content" data-tabs-target="blog">
+            <h2 class="tabs__title">Страница «Блог»</h2>
+            <form class="tabs__form" action=""><span class="tabs__text">Добавить запись</span>
+              <input class="tabs__input" type="text" placeholder="Название"/>
+              <input class="tabs__input" type="text" placeholder="Дата"/>
+              <textarea class="tabs__area" placeholder="Содержание"></textarea>
+              <button class="btn tabs__btn">Добавить</button>
+            </form>
+          </div>
+          <div class="tabs__content" data-tabs-target="work">
+            <h2 class="tabs__title">Страница «Мои работы»</h2>
+            <form class="tabs__form" action=""><span class="tabs__text">Добавить работу</span>
+              <input class="tabs__input" type="text" placeholder="Название проекта"/>
+              <input class="tabs__input" type="text" placeholder="Технологии"/>
+              <div class="file-upload">
+                <label class="file-upload__label">
+                  <input class="tabs__input--file" type="file"/>
+                  <svg class="icon icon-upload file-upload__icon">
+                    <use xlink:href="static/img/svg/symbol/sprite.svg#upload"></use>
+                  </svg><span class="file-upload__text">Загрузить картинку</span>
+                </label>
+              </div>
+              <button class="btn tabs__btn">Добавить</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="static/js/libs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjEGmR9NNuIoWBbdtCSI1i0vCXUftRksI&amp;callback=initMap" async="async" defer="defer"></script>
+  </body>
+</html>
