@@ -208,7 +208,7 @@ body.lock {
   top: -100%;
   left: 0;
   transition: all 0.3s ease-in;
-  z-index: 3;
+  z-index: 13;
 }
 .menu {
   display: flex;
@@ -346,6 +346,7 @@ body.lock {
   max-width: 948px;
   width: 100%;
   background-color: var(--action-color);
+  overflow: hidden;
 }
 .promotion__item {
   display: flex;
